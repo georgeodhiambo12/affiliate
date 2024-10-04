@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affiliate Registration</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .registration-form {
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .registration-form h2 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: #333333;
+        }
+        .form-group {
+            margin-bottom: 1rem;
+            position: relative;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #333333;
+        }
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+        .form-group input[type="checkbox"] {
+            width: auto;
+            margin-right: 0.5rem;
+        }
+        .phone-group {
+            display: flex;
+            align-items: center;
+        }
+        .phone-group select {
+            width: 35%;
+            margin-right: 0.5rem;
+        }
+        .phone-group input {
+            width: 65%;
+        }
+        .form-group button {
+            width: 100%;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 4px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            box-sizing: border-box;
+        }
+        .form-group button:hover {
+            background-color: #45a049;
+        }
+        .form-group .back-to-login {
+            text-align: center;
+            margin-top: 1rem;
+        }
+        .form-group .back-to-login button {
+            background-color: #007BFF;
+            padding: 0.5rem 1rem;
+        }
+        .form-group .back-to-login button:hover {
+            background-color: #0056b3;
+        }
+        .eye-icon {
+            position: absolute;
+            right: 10px;
+            top: 35px;
+            cursor: pointer;
+        }
+        .password-match {
+            position: absolute;
+            right: 40px;
+            top: 35px;
+            color: green;
+            display: none;
+        }
+        .password-mismatch {
+            position: absolute;
+            right: 40px;
+            top: 35px;
+            color: red;
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            .registration-form {
+                padding: 1rem;
+                box-shadow: none;
+            }
+            .form-group input,
+            .form-group select,
+            .form-group button {
+                font-size: 0.9rem;
+                padding: 0.5rem;
+            }
+            .phone-group select {
+                width: 40%;
+            }
+            .phone-group input {
+                width: 60%;
+            }
+            .eye-icon,
+            .password-match,
+            .password-mismatch {
+                top: 25px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .phone-group {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .phone-group select,
+            .phone-group input {
+                width: 100%;
+                margin-bottom: 0.5rem;
+                margin-right: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="registration-form">
+        <h2>Register to the Affiliate Program</h2>
+        <form action="register.php" method="POST" onsubmit="return validateForm()">
+            <div class="form-group">
+                <label for="first-name">First Name</label>
+                <input type="text" id="first-name" name="first_name" required>
+            </div>
+            <div class="form-group">
+                <label for="last-name">Last Name</label>
+                <input type="text" id="last-name" name="last_name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+                <span class="eye-icon" onclick="togglePasswordVisibility('password')">&#128065;</span>
+                <span id="password-match" class="password-match">&#10004;</span>
+                <span id="password-mismatch" class="password-mismatch">&#10006;</span>
+            </div>
+            <div class="form-group">
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password" name="confirm_password" required oninput="checkPasswords()">
+                <span class="eye-icon" onclick="togglePasswordVisibility('confirm-password')">&#128065;</span>
+            </div>
+            <div class="form-group">
+                <label for="country">Country</label>
+                <select id="country" name="country" required>
+                    <option value="Kenya">Kenya</option>
+                    <option value="Uganda">Uganda</option>
+                    <option value="Tanzania">Tanzania</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="phone-number">Phone Number</label>
+                <div class="phone-group">
+                    <select id="country-code" name="country_code" required>
+                        <option value="+254">+254 (Kenya)</option>
+                        <option value="+256">+256 (Uganda)</option>
+                        <option value="+255">+255 (Tanzania)</option>
+                    </select>
+                    <input type="tel" id="phone-number" name="phone_number" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="account-type">Select your Account Type</label>
+                <select id="account-type" name="account_type" required onchange="checkAccountType()">
+                    <option value="Affiliate">Affiliate (Individual or Business)</option>
+            
+                </select>
+            </div>
+            <div class="form-group" id="social-media-group">
+                <label for="social-media">Website / Social Media</label>
+                <input type="text" id="social-media" name="social_media">
+            </div>
+            <div class="form-group">
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms">I agree with the <a href="tc.html">Terms & Conditions</a></label>
+            </div>
+            <div class="form-group">
+                <button type="submit">Register</button>
+            </div>
+        </form>
+        <div class="form-group back-to-login">
+            <button onclick="window.location.href='login.php'">Back to Login</button>
+        </div>
+    </div>
+    <script>
+        function validateForm() {
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+            const accountType = document.getElementById('account-type').value;
+            const socialMedia = document.getElementById('social-media').value;
+
+            // Check if passwords match
+            if (password !== confirmPassword) {
+                alert('Passwords do not match');
+                return false;
+            }
+
+            // Check if social media field is filled for specific account types
+            if ((accountType === "Creator/Micro-Influencer" || accountType === "Mega-Influencer") && socialMedia.trim() === "") {
+                alert('Please provide your Website / Social Media handle.');
+                return false;
+            }
+
+            return true;
+        }
+
+        function checkAccountType() {
+            const accountType = document.getElementById('account-type').value;
+            const socialMediaGroup = document.getElementById('social-media-group');
+            const socialMediaInput = document.getElementById('social-media');
+
+            if (accountType === "Creator/Micro-Influencer" || accountType === "Mega-Influencer") {
+                socialMediaInput.required = true;
+            } else {
+                socialMediaInput.required = false;
+            }
+        }
+
+        function checkPasswords() {
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+            const matchIcon = document.getElementById('password-match');
+            const mismatchIcon = document.getElementById('password-mismatch');
+
+            if (password && confirmPassword) {
+                if (password === confirmPassword) {
+                    matchIcon.style.display = 'inline';
+                    mismatchIcon.style.display = 'none';
+                } else {
+                    matchIcon.style.display = 'none';
+                    mismatchIcon.style.display = 'inline';
+                }
+            } else {
+                matchIcon.style.display = 'none';
+                mismatchIcon.style.display = 'none';
+            }
+        }
+
+        function togglePasswordVisibility(id) {
+            const input = document.getElementById(id);
+            if (input.type === 'password') {
+                input.type = 'text';
+            } else {
+                input.type = 'password';
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{
+    "name": "tenderso/affiliate",
+    "autoload": {
+        "psr-4": {
+            "Tenderso\\Affiliate\\": "src/"
+        }
+    },
+    "require": {
+        "phpoffice/phpspreadsheet": "^1.20"
+    }
+}

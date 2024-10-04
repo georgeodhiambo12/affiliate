@@ -1,0 +1,11 @@
+RewriteEngine On
+RewriteBase /
+
+# Redirect common misspellings of /affiliate to the correct /affiliate/login.php
+RewriteRule ^afiliate/?$ /affiliate/login.php [L,R=301]
+RewriteRule ^affillite/?$ /affiliate/login.php [L,R=301]
+RewriteRule ^affilliate/?$ /affiliate/login.php [L,R=301]
+RewriteRule ^affilliate/?$ /affiliate/login.php [L,R=301]
+
+# Ensure correct /affiliate points to /affiliate/login.php
+RewriteRule ^affiliate/?$ /affiliate/login.php [L]

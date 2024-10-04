@@ -1,0 +1,8 @@
+[31-Jul-2024 06:26:00 UTC] Received Data: Array
+(
+    [merchant_email] => ochieng123george@gmail.com
+    [merchant_name] => George
+    [merchant_phone] => 0773721934
+    [referral_code] => HPE3DF9A
+)
+

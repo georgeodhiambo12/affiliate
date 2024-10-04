@@ -1,0 +1,40 @@
+[20-Sep-2024 12:55:24 Africa/Nairobi] PHP Fatal error:  Uncaught mysqli_sql_exception: User 'tenderso_connect' has exceeded the 'max_user_connections' resource (current value: 30) in /home/tenderso/public_html/affiliate/config.php:8
+Stack trace:
+#0 /home/tenderso/public_html/affiliate/config.php(8): mysqli->__construct()
+#1 /home/tenderso/public_html/affiliate/admin_index.php(3): include('/home/tenderso/...')
+#2 {main}
+  thrown in /home/tenderso/public_html/affiliate/config.php on line 8
+[22-Sep-2024 22:42:49 Africa/Nairobi] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/tenderso/public_html/affiliate/affiliate_index.php on line 715
+[22-Sep-2024 22:42:49 Africa/Nairobi] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/tenderso/public_html/affiliate/affiliate_index.php on line 716
+[22-Sep-2024 22:42:49 Africa/Nairobi] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/tenderso/public_html/affiliate/affiliate_index.php on line 899
+[22-Sep-2024 22:42:49 Africa/Nairobi] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/tenderso/public_html/affiliate/affiliate_index.php on line 905
+[22-Sep-2024 22:42:49 Africa/Nairobi] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/tenderso/public_html/affiliate/affiliate_index.php on line 907
+[22-Sep-2024 22:42:49 Africa/Nairobi] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/tenderso/public_html/affiliate/affiliate_index.php on line 909
+[22-Sep-2024 22:42:49 Africa/Nairobi] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/tenderso/public_html/affiliate/affiliate_index.php on line 911
+[22-Sep-2024 22:42:49 Africa/Nairobi] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/tenderso/public_html/affiliate/affiliate_index.php on line 913
+[23-Sep-2024 10:36:07 Africa/Nairobi] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/tenderso/public_html/affiliate/affiliate_payment_details.php on line 91
+[23-Sep-2024 10:36:07 Africa/Nairobi] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/tenderso/public_html/affiliate/affiliate_payment_details.php on line 95
+[23-Sep-2024 10:36:07 Africa/Nairobi] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/tenderso/public_html/affiliate/affiliate_payment_details.php on line 99
+[23-Sep-2024 10:36:07 Africa/Nairobi] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/tenderso/public_html/affiliate/affiliate_payment_details.php on line 103
+[23-Sep-2024 10:36:07 Africa/Nairobi] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/tenderso/public_html/affiliate/affiliate_payment_details.php on line 107
+[23-Sep-2024 10:36:07 Africa/Nairobi] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/tenderso/public_html/affiliate/affiliate_payment_details.php on line 111
+[26-Sep-2024 11:13:36 Africa/Nairobi] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/tenderso/public_html/affiliate/affiliate_index.php on line 715
+[26-Sep-2024 11:13:36 Africa/Nairobi] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/tenderso/public_html/affiliate/affiliate_index.php on line 716
+[26-Sep-2024 11:13:36 Africa/Nairobi] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/tenderso/public_html/affiliate/affiliate_index.php on line 899
+[26-Sep-2024 11:13:36 Africa/Nairobi] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/tenderso/public_html/affiliate/affiliate_index.php on line 905
+[26-Sep-2024 11:13:36 Africa/Nairobi] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/tenderso/public_html/affiliate/affiliate_index.php on line 907
+[26-Sep-2024 11:13:36 Africa/Nairobi] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/tenderso/public_html/affiliate/affiliate_index.php on line 909
+[26-Sep-2024 11:13:36 Africa/Nairobi] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/tenderso/public_html/affiliate/affiliate_index.php on line 911
+[26-Sep-2024 11:13:36 Africa/Nairobi] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/tenderso/public_html/affiliate/affiliate_index.php on line 913
+[30-Sep-2024 13:44:54 Africa/Nairobi] PHP Fatal error:  Uncaught PhpOffice\PhpSpreadsheet\Reader\Exception: Unable to identify a reader for this file in /home/tenderso/public_html/affiliate/vendor/phpoffice/phpspreadsheet/src/PhpSpreadsheet/IOFactory.php:172
+Stack trace:
+#0 /home/tenderso/public_html/affiliate/vendor/phpoffice/phpspreadsheet/src/PhpSpreadsheet/IOFactory.php(106): PhpOffice\PhpSpreadsheet\IOFactory::createReaderForFile()
+#1 /home/tenderso/public_html/affiliate/affiliate_index.php(292): PhpOffice\PhpSpreadsheet\IOFactory::load()
+#2 {main}
+  thrown in /home/tenderso/public_html/affiliate/vendor/phpoffice/phpspreadsheet/src/PhpSpreadsheet/IOFactory.php on line 172
+[30-Sep-2024 13:45:03 Africa/Nairobi] PHP Fatal error:  Uncaught PhpOffice\PhpSpreadsheet\Reader\Exception: Unable to identify a reader for this file in /home/tenderso/public_html/affiliate/vendor/phpoffice/phpspreadsheet/src/PhpSpreadsheet/IOFactory.php:172
+Stack trace:
+#0 /home/tenderso/public_html/affiliate/vendor/phpoffice/phpspreadsheet/src/PhpSpreadsheet/IOFactory.php(106): PhpOffice\PhpSpreadsheet\IOFactory::createReaderForFile()
+#1 /home/tenderso/public_html/affiliate/affiliate_index.php(292): PhpOffice\PhpSpreadsheet\IOFactory::load()
+#2 {main}
+  thrown in /home/tenderso/public_html/affiliate/vendor/phpoffice/phpspreadsheet/src/PhpSpreadsheet/IOFactory.php on line 172
